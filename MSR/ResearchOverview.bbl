@@ -1,0 +1,62 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Banarescu \bgroup et al.\egroup
+  }2013]{banarescu2013abstract}
+Laura Banarescu, Claire Bonial, Shu Cai, Madalina Georgescu, Kira Griffitt, Ulf
+  Hermjakob, Kevin Knight, Philipp Koehn, Martha Palmer, and Nathan Schneider.
+\newblock 2013.
+\newblock Abstract meaning representation for sembanking.
+
+\bibitem[\protect\citename{Daum{\'e}~III \bgroup et al.\egroup
+  }2009]{daume2009search}
+Hal Daum{\'e}~III, John Langford, and Daniel Marcu.
+\newblock 2009.
+\newblock Search-based structured prediction.
+\newblock {\em Machine learning}, 75(3):297--325.
+
+\bibitem[\protect\citename{Flanigan \bgroup et al.\egroup
+  }2014]{flanigan-EtAl:2014:P14-1}
+Jeffrey Flanigan, Sam Thomson, Jaime Carbonell, Chris Dyer, and Noah~A. Smith.
+\newblock 2014.
+\newblock A discriminative graph-based parser for the abstract meaning
+  representation.
+\newblock In {\em Proceedings of the 52nd Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pages 1426--1436,
+  Baltimore, Maryland, June. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Mintz \bgroup et al.\egroup }2009]{mintz2009distant}
+Mike Mintz, Steven Bills, Rion Snow, and Dan Jurafsky.
+\newblock 2009.
+\newblock Distant supervision for relation extraction without labeled data.
+\newblock In {\em Proceedings of the Joint Conference of the 47th Annual
+  Meeting of the ACL and the 4th International Joint Conference on Natural
+  Language Processing of the AFNLP: Volume 2-Volume 2}, pages 1003--1011.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Pust \bgroup et al.\egroup
+  }2015]{DBLP:conf/emnlp/PustHKMM15}
+Michael Pust, Ulf Hermjakob, Kevin Knight, Daniel Marcu, and Jonathan May.
+\newblock 2015.
+\newblock Parsing english into abstract meaning representation using
+  syntax-based machine translation.
+\newblock In {\em Proceedings of the 2015 Conference on Empirical Methods in
+  Natural Language Processing, {EMNLP} 2015, Lisbon, Portugal, September 17-21,
+  2015}, pages 1143--1154.
+
+\bibitem[\protect\citename{Rao \bgroup et al.\egroup
+  }2015a]{rao-EtAl:2015:NAACL-HLT}
+Sudha Rao, Allyson Ettinger, Hal Daum\'{e}~III, and Philip Resnik.
+\newblock 2015a.
+\newblock Dialogue focus tracking for zero pronoun resolution.
+\newblock In {\em Proceedings of the 2015 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, pages 494--503, Denver, Colorado, May--June. Association for
+  Computational Linguistics.
+
+\bibitem[\protect\citename{Rao \bgroup et al.\egroup }2015b]{rao2015parser}
+Sudha Rao, Yogarshi Vyas, Hal Daum\'{e}~III, and Philip Resnik.
+\newblock 2015b.
+\newblock Parser for abstract meaning representation using learning to search.
+\newblock {\em arXiv preprint arXiv:1510.07586}.
+
+\end{thebibliography}

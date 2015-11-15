@@ -1,0 +1,118 @@
+\documentclass[9.8pt, twocolumn]{article}
+%\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % For figures
+\usepackage{url} 
+\usepackage{color}
+
+\addtolength{\textheight}{1.5cm}
+\definecolor{Green}{RGB}{25,180,0}
+
+\title{Research Statement}
+\author{Snigdha Chaturvedi (snigdhac@cs.umd.edu)}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+My research interests lie in the general area of Natural Language Processing or NLP (a field that studies how computers can interact with natural language: language spoken and written by humans). In particular, I am interested in the problem of Automatic Natural Language Understanding, i.e. creating models that can help in automatedly reading and reasoning about textual data. %, and answer questions about it.
+During a summer internship, I got an opportunity to work at IBM Research Labs and explore the problem of automatic \emph{Question Answering}~\cite{QAWWW} which aims at training computer systems to read text documents and automatically finding answers to associated questions. 
+The experience led me to realize that while mining patterns in large amounts of text data can lead to increased modeling capacity and efficient statistical inference, the existing practice of looking at surface representations of words, rather than modeling their meaning is inadequate for creating robust Natural Language Understanding systems.
+For instance, IBM's Watson system has successfully beaten humans in games like Jeopardy but it still struggling to answer sophisticated questions on a different domain such as medicine.
+
+Some thought into the issues indicates that this paradigm of using \emph{shallow representations} of text is inherently different from the processes involved in text comprehension by humans. While reading a story, humans are guided by their knowledge of semantic denotations of words, the composition of words to form sentences, patterns of discourse narratives in a paragraph, and so on. 
+They can build temporal orderings of principal events in a story; infer the relationships between the characters in a story and explain how their actions affect (or might affect) each other etc. Finally, they can use semantic grounding and their world knowledge to build expectations about incoming words/events etc. and also to fill in gaps about what is not explicitly stated in a text. e.g., \emph{Q: Will you go to a movie tonight? A: I have an exam tomorrow.} 
+
+Computer systems based on shallow representation, on the other hand, develop a very limited understanding of text while reading them which leads to problems like failure to answer sophisticated questions. Successful automatic Natural Language understanding thus requires better representations and models for language constructs and language phenomenon. \textcolor{black}{Better representation could be achieved by designing context aware features that are based on real-world resources that take into consideration the semantics of words and relationships between them. Better models of language understanding could include ones which employ sophisticated techniques that model the development of the story in the text and also flow of information between various parts of the text. In the rest of this document I provide various examples of scenarios where we model world knowledge and the above mentioned flow of information to solve interesting problems.}
+
+
+%, and models that can infer meaning from linguistic phenomenon. %I strongly believe that at the heart of all modern NLP tasks (and not just question answering) is the ability to make a computer system read and more importantly, \emph{understand} the meaning of text written in natural language . This in itself is a complicated research problem (referblack to as Natural Language Understanding or NLU) and for my thesis I want to work in this sub-area of NLP.
+
+%
+
+\section{Modeling inter-personal relationships in narratives}
+\textcolor{black}{A major part of my current work focusses on one aspect of understanding natural language text: studying principal characters and the relationships between them in English language stories.}
+%My current research agenda is to automatically understand English language stories from the perspective of the characters. 
+%In my thesis I describe methods to model inter-personal relationships in text. %Due to their inherent social nature, people continuously interact and form relationships. 
+Understanding these relationships is essential to understanding and explaining people's desires, goals, actions and expected behaviors. The problem presents subtleties that are not immediately obvious. For instance, consider `The king of England asked the king of France to surrender, and he refused' and `Tom asked his mother for another cookie, and she refused'. %While in both sentences the latter character is saying `no' to what the former character is asking for, their relationships are very different. In first sentence the relationship between the two kings is hostile/adversarial while in the second sentence, the mother is not an adversary but simply an authoritative figure. 
+Despite surface and syntactic similarities, the relationships between characters is one of mutual hostility in one case, and asymmetric authority in the other.
+Solving this problem of inferring relationships would allow a computer to `fill-in-the-blanks', and develop expectations about what might be a reasonable story. %things not stated explicitly in the story, or about things that might follow
+Filling-in-the-gaps is one of the fundamental abilities of humans which current computer systems lack. Identifying relationships would allow faithful modeling of character intentions and expected actions. For example, `The king of England then imprisoned the king of France' is something that a reader might expect because they are adversaries, but `Tom then imprisoned mother' would be very surprising. % because mother wasn't an enemy.  
+
+Apart from applications related to general natural language understanding, modeling inter-personal relationships also finds application in many real-world domains such as social networks, discussion forums etc. Specifically, for my thesis, I model inter-personal relationships in natural language text with a focus on narratives. We demonstrate that such a task can benefit from using models that are capable of incorporating not just linguistic cues but also the contexts in which these cues appear. 
+
+We propose models to address the task of modeling the nature of relationships between any two given characters from the narrative. We attempt to jointly infer the relationships between all characters in the narrative and demonstrate how the task of identifying relationship between two characters can benefit by including information about their relationships with other characters in the movie~\cite{rel2} \textcolor{black}{- a common world-knowledge which humans often inherently employ while reading stories}. Such an approach enables incorporation of transitive relations like `friend of a friend is a friend', `common enemy of friends' etc.
+
+\begin{figure}[tb]
+\footnotesize{
+\textbf{S1:} \textcolor{blue}{Tom} \textcolor{Green}{falls in love} with \textcolor{blue}{Becky} Thatcher, a new girl in town, and persuades her to get \textcolor{Green}{``engaged''} to him. \\
+\textbf{S2:} Their \textcolor{red}{romance collapses} when she learns that Tom has been ``engaged'' before—to a girl named Amy Lawrence. \\
+\textbf{S3:} Shortly after being \textcolor{red}{shunned} by Becky, Tom ...\\
+\textbf{S4:} Back in school, Tom gets himself \textcolor{Green}{back in Becky’s favor} after he nobly \textcolor{Green}{accepts the blame} for a book that she has ripped. \\
+\textbf{S5:} Meanwhile, Tom \textcolor{Green}{goes on a picnic} to McDougal’s Cave with Becky and their classmates.
+}
+%\centering
+%\includegraphics[width=0.8\linewidth]{Images/IntroEg.png}
+\caption{Sample sentences from a narrative depicting evolving relationship between characters: Tom and Becky. `\ldots' represent text omitted due to space constraints.}
+\label{fig:introEg}
+\end{figure}
+
+We also formulate the relationship-modeling problem as a \emph{structured prediction} task (a field of NLP that deals into modeling inputs/outputs that have an inherent structure eg. graphs, sequences, trees etc.) to model the evolving nature of human relationships~\cite{rel1}. Most existing methods that model inter-personal relationships treat relationship as a unchanging variable, is not sufficient to explain \emph{all} the events in the narrative. Real-world relationships are instead dynamic and change with the progress of the narrative.  For example, consider the relationship between \emph{Tom} and \emph{Becky} depicted in Fig.~\ref{fig:introEg} which shows an excerpt from the summary~\footnote{SparkNotes Editors. ``SparkNote on The Adventures of Tom Sawyer.'' SparkNotes LLC. 2003. \url{http://www.sparknotes.com/lit/tomsawyer/}} of \emph{The Adventures of Tom Sawyer}. For most of the narrative, the characters are participants in a romantic relationship, which explains most, but not all, of their mutual behavior.  However, we can observe that their relationship was not stagnant but evolving, driving the characters' actions. In this particular case, the characters presumably start as lovers (sentence S1 in the figure), which is hinted at by (and explains) becoming engaged. The relationship sours when Tom reveals his previous love interest (S2 and S3). However, later in the narrative they reconcile (S4 and S5). To incorporate the evolving nature of relationships, we use structured models that make Markov assumptions and demonstrate the need to model history of relationships between characters while modeling their current relationship.
+
+\section{Understanding desire fulfillment}
+\textcolor{black}{Understanding the structure in the text not only helps in modeling relationships between characters but other relevant tasks. For instance, consider the problem of }reading a short narrative text to identify if a desire expressed in the text is fulfilled~\cite{desiresACL}. Expressions of desires and wishes have attracted psycholinguists~\cite{Shatz} and linguists~\cite{Barak} alike. Analyzing desires adds a new dimension to more general tasks like opinion mining where the manufacturers and advertisers want to discover users' desires or needs from online reviews etc. Another use-case would be in resolving issues for community forum users. Identifying posts containing unresolved issues can help focus the efforts of the forum staff and interested members. 
+
+In this case also, we argue that it is insufficient to look for cues indicating desire fulfillment without understanding the text. Instead, it is important to understand the content of the narrative with respect to its central character - the person(s) who expressed the desire. We address this complexity by proposing a model which incorporates the narrative flow between individual sentences of the text, while assessing if the events (and emotional states) mentioned in this flow contribute to (or provide indication of) fulfilling the desire.
+
+%We also use the above model to solve a different problem of identifying if a desire expressed in a short narrative subtext is fulfilled~\cite{desiresACL}. 
+
+
+\section{Identifying thread resolution in discussion forums}
+\textcolor{black}{Apart from narratives, there are several other sources of natural language text that demand deeper understanding, eg. discussion forums. Most existing methods for solving problems related to discussion forums base their approach on either meta-data or a shallow `bag-of-words' style representation of text. Instead, there is a need to understand the content of individual posts and their relationship to each other.} We analyze contents of online educational discussion forums to automatically suggest threads to the instructors that require their intervention~\cite{MOOCs}. By suggesting avenues for instructor-student interaction, we alleviate the need for the instructor to manually go over all threads of the forum and also help the students who have no other way of directly interacting with the instructor. In this problem we argue that it is important to understand the content of the thread post-by-post and model the flow of information between the posts to solve this problem. We propose to incorporate thread structure into our approach by using latent variables that abstractly represent contents of individual posts and model the flow of information in the thread. A structured approach that incorporates the flow of information in the thread performs better at the prediction task than an unstructured approach that simply extracts features from all the posts of the thread collectively.
+
+
+\section{Future Work}
+%An important contribution of my work is identifying the evolutionary nature of relationships. 
+In future I would like to do a more in-depth analysis of novels, devising methods to pick-up subtle cues about relationships based on varying literary styles of authors. This direction could be used to answer questions like `What kind of novels have happy endings?', `Are there general narrative templates of relationship evolution between the protagonist and his/her lover?' etc. Exploiting the dynamic nature of relationships can also find application in social media domain. For instance, social networking sites could use this phenomenon  for customizing news feeds. Human relationships are often governed by geographical proximity, common interests etc. A change in these factors could lead to a change in nature/strength of relationship and hence change in interest in `news' related to the other person.
+
+Apart from modeling relationships, I would like to explore other challenging problems related to natural language understanding which include solving pedagogical exercises such as reading-comprehension questions, simple math word-problems etc. These problems also require understanding text to answer questions related to the text. Even though the answer to the questions are present in the text, these problems are currently, not solvable to a satisfactory level by computers.
+
+Based in these techniques, it would be possible to design a system that can read and comprehend large documents with a goal not limited to answering questions or modeling relationships etc., but to a more human-like behavior of expanding its knowledge-base. Such a system would have a knowledge and understanding of the world like human albeit at a much larger scale and could be used for several downstream NLP tasks involving text comprehension.
+
+\begin{thebibliography}{10} % 100 is a random guess of the total number of
+\scriptsize{
+\bibitem{QAWWW} Chaturvedi S., Castelli V., Florian R., Nallapati R., Raghavan H. 2014:
+\emph{Joint question clustering and relevance prediction for open domain non-factoid question answering}. WWW 2014: 503-514.
+%\bibitem{TM} Chaturvedi S., Daumé III H., Moon T.: \emph{Discriminatively Enhanced Topic Models}. ICDM 2013: 985-990.
+\bibitem{MOOCs} Chaturvedi S., Goldwasser D., Daumé III H. 2014: \emph{Predicting Instructor's Intervention in MOOC forums}. ACL (1) 2014: 1501-1511.
+\bibitem{desiresACL} Chaturvedi S., Goldwasser D., Daumé III H.: \emph{Ask, and shall you receive?: Understanding Desire Fulfillment in Natural Language Text} (under review).
+\bibitem{rel1} Chaturvedi S., Srivastava S., Daumé III H., Dyer C.: \emph{Modeling Evolving Relationships Between Characters in Literary Novels} (under review).
+\bibitem{Shatz} Shatz, M.; Wellman, H. M.; and Silber, S. 1983. \emph{The acquisition of mental verbs: A systematic investigation of the first reference to mental state.} Cognition 14(3):301–321.
+\bibitem{Barak} Barak, L.; Fazly, A.; and Stevenson, S. 2013. \emph{Acquisition of desires before beliefs: A computational investigation.} Proceedings of CoNLL-2013.
+\bibitem{rel2} Srivastava S., Chaturvedi S., Mitchell T.: \emph{Inferring Inter-personal Relationships in Narrative Summaries} (under review).
+}
+\end{thebibliography}
+
+
+%=========================================
+\newpage
+%We then propose to jointly address the relationship-modeling task in the two domains mentioned above to better utilize their commonalities while simultaneously teasing apart their idiosyncrasies. 
+
+%During the first three years of my program, along with completing my course work requirement, I decided to explore the various types of research sub-areas which are covered under the broad canopy of Natural Language Processing (NLP) field. <<It was very fruitful>>. I started with the `trending' field of \emph{Topic Models}~\cite{icdm} which analyze a corpus of text documents to discover abstract `topics' that are being discussed in the corpus. For example, a newspaper corpus would be composed of topics like `politics, sports etc. 
+
+%As an exploratory project in understanding character intentions, I worked on the problem of reading short paragraphs,  and identifying if a character's stated intentions in the text were met. We recently submitted a paper on this topic~\cite{desiresACL}. I target stories as opposed to any general textual document in order to limit world knowledge required to understand and make the problem tractable in the given period of time. At the same time, I believe that the methods I learn here would be directly applicable to general text such as online reviews, Wikipedia articles, blogs, etc. and could be enhanced by incorporating world knowledge. For example, the project mentioned above could be easily applied to domain of online reviews of products or discussion forums where such a system would be useful for managers/advertisers/politicians who are interested in knowing what people wanted/desired and if they were successful in fulfilling it. 
+
+%While working in the theme of ideas I have described above, I have identified several key sub-problems that need to be solved for a better understanding of a story. One such component is to identify and characterize the relationships the principal characters in a story. 
+
+%The problem presents subtleties that are not immediately obvious. For instance, consider 'The king of England asked the king of France to surrender and he said no' and `Tom asked his mother for another cookie but she said no'. While in both sentences the latter character is saying `no' to what the former character is asking for, their relationships are very different. In first sentence the relationship between the two kings is hostile/adversarial while in the second sentence, the mother is not an adversary but simply an authoritative figure. Solving this problem would allow a computer to `fill-in-the-blanks', and develop expectations about what things not stated explicitly in the story, or about things that might follow. Filling-in-the-gaps is one of the fundamental abilities of human readers which the current computer systems lack. Identifying relationships would also allow faithful modeling of character intentions and expected actions. For example, 'The king of England then killed the king of France.' is something that a reader might expect, because they are enemies but `Mother then killed Tom.' is very surprising because mother wasn't an enemy. 
+
+%I hope to spend this summer exploring my tentative thesis plan and assure myself of its complexity and potential utility, before I advance to candidacy. My program recommends advancing to candidacy by the end of four years and which ends with this summer for me. I have completed my coursework and have published several papers as per my program's recommendation. Thus, this fellowship will directly enable me to clearly delineate my thesis topic and confidently advance to candidacy.
+
+
+
+
+\end{document}
+
+

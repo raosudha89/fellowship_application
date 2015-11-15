@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: ResearchOverview.aux
+The style file: acl.bst
+Database file #1: ResearchOverview.bib
+A bad cross reference---entry "DBLP:conf/emnlp/PustHKMM15"
+refers to entry "DBLP:conf/emnlp/2015", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/emnlp/2015"
+Warning--empty journal in banarescu2013abstract
+You've used 8 entries,
+            2490 wiz_defined-function locations,
+            605 strings with 6853 characters,
+and the built_in function-call counts, 4661 in all, are:
+= -- 490
+> -- 234
+< -- 5
++ -- 86
+- -- 84
+* -- 356
+:= -- 724
+add.period$ -- 35
+call.type$ -- 8
+change.case$ -- 74
+chr.to.int$ -- 7
+cite$ -- 9
+duplicate$ -- 186
+empty$ -- 307
+format.name$ -- 92
+if$ -- 996
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 8
+newline$ -- 50
+num.names$ -- 24
+pop$ -- 85
+preamble$ -- 1
+purify$ -- 82
+quote$ -- 0
+skip$ -- 153
+stack$ -- 0
+substring$ -- 258
+swap$ -- 71
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 64
+warning$ -- 1
+while$ -- 33
+width$ -- 13
+write$ -- 118
+(There was 1 error message)

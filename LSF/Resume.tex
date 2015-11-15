@@ -1,0 +1,184 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[top=2.5cm, left=2.5cm, right=2.5cm, foot=1.5cm, bottom=2.5cm]{geometry}
+\usepackage{latexsym}
+\usepackage{verbatim}
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=blue, urlcolor=blue}
+
+
+\definecolor{mygrey}{gray}{.90}
+\textheight=9.0in
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Adjust margins
+
+%\addtolength{\oddsidemargin}{-0.375in}
+%\addtolength{\evensidemargin}{0.375in}
+%\addtolength{\textwidth}{0.5in}
+%\addtolength{\topmargin}{-.375in}
+%\addtolength{\bottommargin}{-.375in}
+%\addtolength{\textheight}{0.75in}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+
+\newcommand{\ressubheadingnew}[6]{
+\begin{tabular*}{6in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+		\textit{#5} \\
+		\textit{#6}
+\end{tabular*}\vspace{-6pt}}
+
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+
+\newcommand{\projectitem}[2]{
+\begin{tabular*}{6in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & \textit{#2} 
+\end{tabular*}\vspace{-6pt}}
+
+%-----------------------------------------------------------
+
+\begin{document}
+\newcommand{\myheader}{
+\begin{tabular*}{6.4in}{l@{\extracolsep{\fill}}r}
+	\textbf{\LARGE Sudha Rao}\\
+	 & 609-933-0409\\
+	 & raosudha@cs.umd.edu\\
+	\end{tabular*}
+\\
+\vspace{0.1in}}
+
+\myheader
+\hrule
+~\\
+~\\
+\resheading{Education}
+\begin{itemize}
+\item []\ressubheadingnew{University of Maryland, College Park}{}{PhD - Computer Science}{2013 - 2018 (expected)} {Focus: Natural Language Processing}{Advisors: Hal Daum\'e III, Philip Resnik}
+\item []\ressubheading{Veermata Jijabai Technological Institute}{Mumbai}{Bachelor of Technology - Computer Engineering; CPI:9.4/10}{May 2011}
+\end{itemize}
+
+\resheading{Publications}
+{\footnotesize
+\begin{itemize}
+\item \textbf{Sudha Rao}, Yogarshi Vyas, Hal Daum\'e III, and Philip Resnik.  \textbf{Parser for Abstract Meaning Representation using Learning to Search} \textit{Under submission}
+\item \textbf{Sudha Rao}, Allyson Ettinger, Hal Daum\'e III, and Philip Resnik, \textbf{Dialogue focus tracking for zero pronoun resolution}, NAACL 2015, Denver, Colorado, June 2015.
+\item 
+Suzanne D’Silva, Neha Joshi, \textbf{Sudha Rao}, Sangeetha Venkatraman, and Seema Shrawne.  {\textbf{Improved Algorithms for Document Classification \& Query-based Multi-Document Summarization}}, \textit{International Journal of Engineering and Technology vol. 3, no. 4, pp. 404-409 , 2011}
+\end{itemize}
+}
+
+\resheading{Research Experience}
+\begin{itemize}
+\item
+\projectitem {Semantics for biology}{Summer 2015}
+{\footnotesize
+  \begin{itemize}
+  \item Working on identifying protein interactions in biology texts using \textbf{Abstract Meaning Representation (AMR)} of sentences.
+  \item This work is a part of the \textbf {\textit{Big Mechanism}} project and I am working on this with \textbf{Dr. Daniel Marcu} and \textbf{Dr. Kevin Knight} at \textbf{ISI, USC}.
+  \end{itemize}
+}
+\item
+\projectitem {Semantic Parsing}{Fall 2014}
+{\footnotesize
+  \begin{itemize}
+  \item Worked on automatically learning \textbf{Abstract Meaning Representation (AMR)} for English sentences using \textbf{SEARN} $($Search based Structured Prediction$)$ technique.
+  \end{itemize}
+}
+\item
+\projectitem {Machine Translation}{Spring 2013}
+{\footnotesize
+  \begin{itemize}
+  \item Worked on developing a \textbf{Sequence Labeling} model for restoring \textbf{dropped pronouns} when translating SMS text from Chinese to English.
+  \item This work was done as a part of \textbf{IBM's BOLT} project.
+  \end{itemize}
+}
+
+\item 
+\projectitem  {Query based Multi-document Summarization}{Spring 2011}
+{\footnotesize
+  \begin{itemize}
+  \item Analyzed and \textbf{improved a Hypergraph based technique} for summarization to make it less processor intensive.
+  \item Designed a simple algorithm for query based multi-document summarization using \textbf{k-means clustering} with results comparable to the Hypergraph based technique.
+  \end{itemize}
+}
+\end{itemize}
+
+\resheading{Work Experience}
+\begin {itemize}
+ \item
+\ressubheading{NVIDIA Graphics Pvt. Ltd.}{Pune}{System Software Engineer}{July 2011 -- April 2013}
+{\footnotesize
+  \begin{itemize}
+  \item Designed and implemented a test infrastructure for Tegra Driver on varied mobile operating systems and platforms.
+  \item Worked on in-house mobile tools being developed as a part of \textit{Planning, Infrastructure \& Operations} team.
+  \end{itemize}
+}
+\item
+\ressubheading{Microsoft India Development Center}{Hyderabad}{Software Development Engineer - Intern}{May 2010 -- July 2010}
+{\footnotesize
+  \begin{itemize}
+  \item Worked on Data Protection Management.
+  \end{itemize}
+}
+\end{itemize}
+
+\resheading{Teaching Experience}
+\begin{itemize}
+\item []
+ \ressubheading {CMSC 131 - Object Oriented Programming} {Fall 2013} {}{}
+ \end{itemize}
+
+\resheading{Projects}
+\begin{itemize}
+\item
+\projectitem{Predicting clinical depression}{Spring 2013}
+{\footnotesize
+  \begin{itemize}
+\item We used \textbf{Facebook status updates} to predict neuroticism among people.
+\item This project was done as a part of the \textbf{Computational Linguistics} course.
+  \end{itemize}
+}
+\item
+\projectitem{Farmer’s Buddy}{Fall 2009}
+{\footnotesize
+  \begin{itemize}
+  \item We developed a first of its kind portal to be accessible via Internet allowing users, especially farmers, to obtain information regarding various activities involved in farming and providing a platform for interaction between the different users of the system.
+  \item This project was developed as part of \textbf{IBM's The Great Mind Challenge}, 2009, and was among the \textbf{Top 20} projects all over India.
+  \end{itemize}
+}
+\end{itemize}
+
+
+\resheading{Honours/Awards}
+{\footnotesize
+\begin{itemize}
+\item Scholarship to attend the \textbf{Grace Hopper Celebration} conference 2014.
+\item Recipient of \textbf{Dean's Fellowship} at University of Maryland, College Park.
+\item Travel fund to attend \textbf{NIPS} conference 2013.
+\item Scholarship to attend the \textbf{Women in Theory} conference 2012 at Princeton University.
+\item Ranked \textbf{3rd} out of 70 students in the Computer Science department of VJTI.
+\item Recipient of scholarship award from \textbf{Sir Ratan Tata} Trust (2008, 2009 and 2010).
+\item \textbf{56th} rank in Maharashtra in MHT-CET examination held in May – 2007 in Engineering Course. Score: \textbf{(194 / 200)}
+\end{itemize}
+
+\resheading{Technical Skills}
+{\footnotesize
+\begin{itemize}
+\item \textbf{Languages:} Python, Java, C++, C\#, SQL, Perl
+\item \textbf{Web Technologies:} J2EE(JSP, Servlet), HTML, CSS, Javascript, AJAX
+\item \textbf{Databases:} Microsoft SQL, IBM DB2
+\item \textbf{Operating Systems:} Linux, OS X, Microsoft Windows
+\end{itemize}
+}
+\end{document}
